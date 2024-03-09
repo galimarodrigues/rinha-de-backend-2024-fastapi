@@ -3,9 +3,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.params import Depends
 from sqlalchemy import select
 from sqlalchemy.orm import Session
-from src.api import schemas
-from src.models.models import Transacao, Cliente
-from src.database.database import SessionLocal
+from src import schemas
+from src.models import Transacao, Cliente
+from src.database import SessionLocal
 
 app = FastAPI()
 

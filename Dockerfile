@@ -6,6 +6,6 @@ COPY ./requirements.txt /src/requirements.txt
 
 RUN pip install --no-cache-dir -r /src/requirements.txt
 
-COPY src/api/ ./src/
+COPY src/ ./src
 
-CMD ["uvicorn", "src.api.app:app", "--reload", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "src.app:app", "--reload", "--host", "0.0.0.0", "--port", "80"]
