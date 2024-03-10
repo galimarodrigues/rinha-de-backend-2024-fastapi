@@ -4,14 +4,14 @@ services:
   api01: &api
     hostname: api01
     container_name: api01
-    image: garodrigues7/rinha-de-backend-2024-fastapi:tagname
+    # image: garodrigues7/rinha-de-backend-2024-fastapi:tagname
     build:
       context: .
       dockerfile: Dockerfile
     depends_on:
       - db
     volumes:
-      - ./:/src
+      - ./:/src/app
     ports:
       - "81:80"
     deploy:
@@ -32,7 +32,7 @@ services:
     container_name: nginx
     hostname: nginx
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./core/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - api01
       - api02
@@ -56,8 +56,8 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_DB=rinha
     volumes:
-      - ./script.sql:/docker-entrypoint-initdb.d/script.sql
-      - ./postgres.conf:/etc/postgresql/postgresql.conf
+      - ./core/script.sql:/docker-entrypoint-initdb.d/script.sql
+      - ./core/postgres.conf:/etc/postgresql/postgresql.conf
     deploy:
       resources:
         limits:
