@@ -16,7 +16,7 @@ Submissão feita com:
 - `FastAPI` para a API
 - `SQLAlchemy` como ORM para interação com o banco de dados
 
-- [Repositório da API](https://github.com/galimarodrigues/rinha-backend-2024-fastapi)
+- [Repositório da Rinha de Backend e Explicação da proposta](https://github.com/galimarodrigues/rinha-de-backend-2024-q1)
 
 ### Para rodar o projeto, execute o seguinte comando:
 
